@@ -24,6 +24,23 @@
 			});
  	</script>
 
+	<script>
+					
+			function calculateAmount1(val){
+			var tot_price = val * 69;
+			var divobj = document.getElementById('tot_amount');
+			divobj.value = tot_price
+		
+			}
+
+			function calculateAmount2(val){
+			var tot_price = val * 119;
+			var divobj = document.getElementById('tot_amount');
+			divobj.value = tot_price
+		}
+	
+		</script>
+
 </head>
 <body>
 	<div id="compare-table-widget" class=" simple">
@@ -78,10 +95,12 @@
 			<div class="prod"></div>
 		<a href="#" class="btn-drop hidestuff"></a>
 			<ul class="dropdown hidestuff"></ul></dd></dl>
-			<dl class="mid cost"><dt>write here</dt><dd>write here</dd></dl>
-			<dl class="mid normal"><dt>write here</dt><dd>write here</dd></dl>
-			<dl class="mid alt"><dt>write here</dt><dd>write here</dd></dl>
-			<dl class="mid normal"><dt>write here</dt><dd>write here</dd></dl>
+			<dl class="mid cost">
+			<dt>Cost</dt><dd><span class="small"></span>R69 <span class="small">PM&nbsp;(Incl.&nbsp;VAT)</span></dd></dl>
+			<dl class="mid normal"><dt>FREE domain for first year<sup> 1</sup></dt><dd>.co.za|.site|.online|.store|.tech</dd></dl>
+			<dl class="mid alt"><dt>Setup Fee</dt><dd>FREE</dd></dl>
+			<dl class="mid normal"><dt>Web Traffic<sup> 2</sup></dt>
+			<dd>Unlimited</dd></dl>
 			<dl class="mid alt"><dt>Storage Space</dt><dd>1000 <span>MB</span></dd></dl>
 			<dl class="mid normal"><dt>Email Accounts</dt><dd>25</dd></dl>
 			<dl class="mid alt"><dt>Databases</dt>
@@ -90,9 +109,24 @@
 			<dd class="check"></dd></dl>
 			<dl class="mid alt"><dt>All Features</dt>
 			<dd><a href="#morefeatures" class="afribox">View »</a></dd></dl>
-			<dl class="foot"><dt>R69
-		</span></dt><dd>
-		<a href="">Sign up Now!</a></dd></dl></li> 
+			<dl class="mid cost"><dt>
+				<form name="frm-pin" method="POST" action="pin-index.php">
+					<input type ="hidden" name="mode" value="quantity"/><br>
+					<label > Quantity </label><br><br>
+					<select name="tot_quant" onchange="calculateAmount1(this.value)" required>
+					<option value ="1">1</option>
+					<option value ="2">2</option>
+					<option value ="3">3</option>
+					<option value ="4">4</option>
+					<option value ="5">5</option>
+					<option value ="6">6</option>
+					<option value ="7">7</option>
+					<option value ="8">8</option>
+					</select><br>
+					
+				</form>
+			</dt></dl>
+		</li> 
 
 		<!--SLIDE 2-->
 		<li class="product"  rel="2">
@@ -115,12 +149,11 @@
 			class="check"></dd></dl><dl
 			class="mid alt"><dt>All Features</dt><dd><a
 			href="#morefeatures" class="afribox">View »</a></dd></dl>
-			<dl ><dt>
+			<dl class="mid cost"><dt>
 				<form name="frm-pin" method="POST" action="pin-index.php">
 					<input type ="hidden" name="mode" value="quantity"/><br>
 					<label > Quantity </label><br><br>
-					
-					<select name="tot_quant" onchange="calculateAmount(this.value)" required>
+					<select name="tot_quant" onchange="calculateAmount2(this.value)" required>
 					<option value ="1">1</option>
 					<option value ="2">2</option>
 					<option value ="3">3</option>
@@ -130,26 +163,22 @@
 					<option value ="7">7</option>
 					<option value ="8">8</option>
 					</select><br>
-					<label class="foot"> Total R: </label><br>
-						<input name="tot_amount" id="tot_amount" type ="text" readonly>
-					<script>
-			
-				function calculateAmount(val){
-				var tot_price = val * 69;
-				var divobj = document.getElementById('tot_amount');
-				divobj.value = tot_price
+					
+				</form>
+			</dt></dl></li>
 				
-				}
-					</script>
-				</form>		
-				
-				
-			</dt></dl>
-		
-			<a class="btn btn-primary" href="">Sign up Now!</a></dd></dl></li> 
-		
 </div>
 	</div></div>
+
+	<div style="height: 300px;
+	width: 400px;
+	margin: 20px auto;
+	text-align: center;" >
+		<label class= "mid cost foot" > Total R: </label><br>
+		<input name="tot_amount" id="tot_amount" type ="text"  readonly>
+	 </div>
+
+					
 </body> 
 </html>
 
